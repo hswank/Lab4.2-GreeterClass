@@ -1,0 +1,56 @@
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class GreeterTest {
+
+	@Test
+	void test1() {
+		Greeter test1 = new Greeter("Welcome");
+		String expected = "Welcome, John!";
+		String actual = test1.greet("John");
+		assertEquals(expected, actual);
+	}
+	
+	@Test
+	void test2() {
+		Greeter test2 = new Greeter("Hello");
+		String expected = "Hello, Jane!";
+		String actual = test2.greet("Jane");
+		assertEquals(expected, actual);
+	}
+	
+	@Test
+	void test3() {
+		SimonGreeter test3 = new SimonGreeter("Howdy");
+		String expected = "Simon Says, \"Howdy, Dude!\"";
+		String actual = test3.greet("Dude");
+		assertEquals(expected, actual);
+	}
+	
+	@Test
+	void test4() {
+		SimonGreeter test4 = new SimonGreeter("Cowabunga");
+		String expected = "Simon Says, \"Cowabunga, Man!\"";
+		String actual = test4.greet("Man");
+		assertEquals(expected, actual);
+	}
+	
+	@Test
+	void test5() {
+		LoudGreeter test5 = new LoudGreeter("Hola");
+		String expected = "Hola, Amigo!!";
+		String actual = test5.greet("Amigo");
+		assertEquals(expected, actual);
+	}
+	
+	@Test
+	void test6() {
+		LoudGreeter test6 = new LoudGreeter("Hola");
+		test6.addVolume();
+		String expected = "Hola, Amigo!!!";
+		String actual = test6.greet("Amigo");
+		assertEquals(expected, actual);
+	}
+
+}
